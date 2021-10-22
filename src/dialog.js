@@ -44,6 +44,7 @@ const css = `
     padding: 32px 24px;
     height: 120px;
     box-sizing: border-box;
+    font-size: 14px;
   }
   .browser-detection-footer {
     padding-bottom: 32px;
