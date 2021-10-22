@@ -30,7 +30,7 @@ const bd = new browserDetection()
 ```
 
 ```javascript
-<script id="drowserDetection" data-check="auto" src="https://cdn.jsdelivr.net/npm/@cxy227/browser-detection@0.1.1/dist/index.js"></script>
+<script id="drowserDetection" data-check="auto" src="https://cdn.jsdelivr.net/npm/@cxy227/browser-detection@0.1.3/dist/index.js"></script>
 ```
 
 ## 🧰 开发测试

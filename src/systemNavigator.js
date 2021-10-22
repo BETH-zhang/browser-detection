@@ -1,7 +1,4 @@
 // var io = navigator.userAgent.match(/\s(Edge\/|MSIE\s|rv:)([0-9]*).\d*/);
-
-import Dialog from "./dialog"
-
 // module.export = {
 //   isEdge: io && io[1] === "Edge/",
 //   isIE: io && io[1] !== "Edge/",
@@ -210,18 +207,4 @@ const systemNavigator = (agent) => {
   }
 }
 
-export default class BrowserDetection {
-  constructor() {
-    this.info = systemNavigator()
-  }
-
-  check() {
-    const info = this.info
-    const dialog = new Dialog()
-    if (info && info.name !== 'Chrome') {
-      dialog.show('您当前的浏览器我们暂不支持，请安装 Edge 浏览器。')
-    } else if (Number(info && info.version) < 80) {
-      dialog.show('您当前的【Chrome内核】版本过低，请安装 Edge 浏览器。')
-    }
-  }
-}
+export default systemNavigator
