@@ -58,7 +58,7 @@ const css = `
     border: 2px solid #1e53e8;
     text-align: center;
     line-height: 32px;
-    width: 200px;
+    width: 220px;
     border-radius: 6px;
     padding: 0 14px;
     margin-bottom: 12px;
@@ -68,6 +68,11 @@ const css = `
     background: #f5f5f5;
     color: #295ef5;
     border: 0;
+  }
+
+  .browser-detection-download-edge div:after {
+    content: '';
+    clear: both;
   }
 
   .browser-detection-download-edge a {
@@ -101,7 +106,7 @@ export default class Dialog {
     const header = addBox('⚠️ 系统检测', box, { class: 'browser-detection-header' })
     const main = addBox('您当前的 Chrome 版本浏览器版本过低，请安装新版浏览器。', box, { class: 'browser-detection-content' })
     const footer = addBox(null, box, { class: 'browser-detection-footer' })
-    const download = addBox('<a href="https://www.microsoft.com/zh-cn/edge" target="_blank">下载最新版Edge浏览器</a><img src="https://static.uskid.com/web/garden/kv1u1i28_nDrUEUrFQ6bAFcecbLyNLwdJ.png" alt="" />', footer, { class: 'browser-detection-download-edge' })
+    const download = addBox('<div style="display: inline-block;"><a href="https://www.microsoft.com/zh-cn/edge" target="_blank">下载最新版Edge浏览器</a><img src="https://static.uskid.com/web/garden/kv1u1i28_nDrUEUrFQ6bAFcecbLyNLwdJ.png" alt="" /></div>', footer, { class: 'browser-detection-download-edge' })
     const next = addBox('<a href="javascript:;">下次再说</a>', footer, { class: 'browser-detection-close' })
     
     addStyle(css)
