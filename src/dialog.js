@@ -2,6 +2,7 @@ import { $, addBox, addBtn, addStyle } from "./util";
 
 const css = `
   .browser-detection-mask {
+    display: none;
     content: '';
     position: fixed;
     z-index: 99998;
@@ -83,6 +84,7 @@ export default class Dialog {
   }
 
   show(message) {
+    this.boxMask.classList.add('browser-detection-box-show')
     this.box.classList.add('browser-detection-box-show')
     if (message) {
       this.main.innerHTML = `${message}`
