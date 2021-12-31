@@ -79,6 +79,7 @@ const css = `
     display: inline-block;
     float: left;
     color: #fff;
+    font-size: 16px;
   }
 
   .browser-detection-download-edge img {
@@ -93,6 +94,7 @@ const css = `
     color: #295ef5;
     display: inline-block;
     width: 100%;
+    font-size: 16px;
   }
 `
 export default class Dialog {

@@ -13,6 +13,7 @@
     "browser-version"
   ],
   "scripts": {
+    "start": "npm run dev",
     "dev": "rollup -c -w",
     "build": "rollup -c",
     "release": "standard-version",
