@@ -1,6 +1,6 @@
 {
   "name": "@cxy227/browser-detection",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "使用用户代理进行浏览器版本检测",
   "main": "dist/index.js",
   "files": [
