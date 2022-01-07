@@ -1,5 +1,6 @@
 import babel from 'rollup-plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
+import { uglify } from 'rollup-plugin-uglify'
 
 export default {
   input: 'src/index.js',  // 入口文件
@@ -12,6 +13,7 @@ export default {
     resolve(),
     babel({
       exclude: 'node_modules/**' // 不对node_modules进行编译
-    })
+    }),
+    uglify(),
   ]
 }
