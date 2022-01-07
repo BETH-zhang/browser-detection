@@ -137,33 +137,42 @@ const systemNavigator = (agent) => {
   let agentArr =
     userAgent.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []
 
+  let brand = ''
+  console.log('agentArr: ', agentArr)
   if (agentArr[1] === 'Chrome') {
+    brand = 'chrome'
     navigatorInfo = userAgent.match(/(OPR(?=\/))\/?(\d+)/i)
+    console.log(navigatorInfo)
     if (navigatorInfo !== null) {
       agentArr[2] = navigatorInfo[1]
     }
   } else if (agentArr[1] === 'Safari') {
+    brand = 'safari'
     navigatorInfo = userAgent.match(/version\/(\d+)/i)
     if (navigatorInfo !== null) {
       agentArr[2] = navigatorInfo[1]
     }
   } else if (~userAgent.toLowerCase().indexOf('qqbrowser')) {
+    brand = 'qqbrowser'
     navigatorInfo = userAgent.match(/(qqbrowser(?=\/))\/?(\d+)/i)
     if (navigatorInfo !== null) {
       agentArr[2] = navigatorInfo[1]
     }
   } else if (~userAgent.toLowerCase().indexOf('micromessenger')) {
+    brand = 'weixin'
     navigatorInfo = userAgent.match(/(micromessenger(?=\/))\/?(\d+)/i)
     if (navigatorInfo !== null) {
       agentArr[1] = 'WeiXin'
       agentArr[2] = navigatorInfo[1]
     }
   } else if (~userAgent.toLowerCase().indexOf('edge')) {
+    brand = 'edge'
     navigatorInfo = userAgent.match(/(edge(?=\/))\/?(\d+)/i)
     if (navigatorInfo !== null) {
       agentArr[2] = navigatorInfo[1]
     }
   } else if (~userAgent.toLowerCase().indexOf('trident')) {
+    brand = 'ie'
     navigatorInfo = /\brv[ :]+(\d+)/g.exec(userAgent) || []
     agentArr = [null, 'IE', navigatorInfo[1]]
   }
@@ -184,25 +193,29 @@ const systemNavigator = (agent) => {
 
   if (/Android|iOS/.test(osArr[0])) {
     if (~userAgent.toLowerCase().indexOf('xiaomi')) {
+      brand = 'xiaomi'
       navigatorInfo = userAgent.match(/(XiaoMi\/MiuiBrowser(?=\/))\/?(\d+)/i)
       agentArr[1] = 'XiaoMi/MiuiBrowser'
       agentArr[2] = navigatorInfo[2]
     } else if (~userAgent.toLowerCase().indexOf('dingtalk')) {
+      brand = 'dingding'
       navigatorInfo = userAgent.match(/(com.laiwang.DingTalk(?=\/))\/?(\d+)/i)
       agentArr[1] = 'DingTalk'
       agentArr[2] = navigatorInfo[2]
     }
   } else if (/Android/.test(userAgent) && ~userAgent.toLowerCase().indexOf('micromessenger')) {
+    brand = 'weixin'
     navigatorInfo = userAgent.match(/(micromessenger(?=\/))\/?(\d+)/i)
     agentArr[1] = 'WeiXin'
     agentArr[2] = navigatorInfo[1]
     osArr[0] = 'Android'
   }
-
+  
   return {
     name: agentArr[1],
     version: agentArr[2],
     os: osArr[0],
+    brand,
     userAgent: navigator.userAgent,
   }
 }
