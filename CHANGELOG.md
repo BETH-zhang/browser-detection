@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/BETH-zhang/browser-detection/compare/v0.1.7...v0.1.8) (2022-01-07)
+
+
+### Features
+
+* **show-brand:** 显示浏览器的盒子品牌 ([63b5f5c](https://github.com/BETH-zhang/browser-detection/commit/63b5f5ca73eb11971b6e359276ceaf22595a0d3f))
+
 ### [0.1.7](https://github.com/BETH-zhang/browser-detection/compare/v0.1.6...v0.1.7) (2022-01-04)
 
 
