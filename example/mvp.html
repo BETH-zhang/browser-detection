@@ -13,8 +13,7 @@
 
     <title>My title</title>
     <script src="https://cdn.jsdelivr.net/npm/us-utils-asyncloadscript@1.1.3/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-    <!-- <script id="drowserDetection" data-check="auto" src="/dist/index.js?t=14"></script> -->
+    <script id="drowserDetection" data-check="auto" data-btn-text="自定义文案" data-btn-href="https://document.kidkid.com/preview?docId=d1d9f3ea75704d479b12defc01ca8f3c" src="./index.js?t=14"></script>
 </head>
 
 <body>
@@ -85,13 +84,13 @@
             }) 
         }
 
-        window.addEventListener('load', () => {
-            if (window.GlobalLoadScript) {
-                window.GlobalLoadScript()('/dist/index.js?t=' + new Date(), () => {
-                    window.GlobalLoadScript()('/example/test.js?t=' + new Date(), init) 
-                })
-            }
-        });
+        // window.addEventListener('load', () => {
+        //     if (window.GlobalLoadScript) {
+        //         window.GlobalLoadScript()('/dist/index.js?t=' + new Date(), () => {
+        //             window.GlobalLoadScript()('/example/test.js?t=' + new Date(), init) 
+        //         })
+        //     }
+        // });
     </script>
 </body>
 

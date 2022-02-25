@@ -103,12 +103,25 @@ export default class Dialog {
   }
 
   init() {
+    let btnText = '下载最新版Edge浏览器'
+    let btnHref = 'https://www.microsoft.com/zh-cn/edge'
+    let hideImg = false
+    const sEle = document.getElementById('drowserDetection')
+    if (sEle) {
+      btnText = sEle.getAttribute('data-btn-text') || btnText
+      btnHref = sEle.getAttribute('data-btn-href') || btnHref
+      hideImg = sEle.getAttribute('data-btn-text')
+    }
+
     const boxMask = addBtn(null, null, { class: 'browser-detection-mask' })
     const box = addBox(null, null, { class: 'browser-detection-box' })
     const header = addBox('⚠️ 系统检测', box, { class: 'browser-detection-header' })
     const main = addBox('您当前的 Chrome 版本浏览器版本过低，请安装新版浏览器。', box, { class: 'browser-detection-content' })
     const footer = addBox(null, box, { class: 'browser-detection-footer' })
-    const download = addBox('<div style="display: inline-block;"><a href="https://www.microsoft.com/zh-cn/edge" target="_blank">下载最新版Edge浏览器</a><img src="https://static.uskid.com/web/garden/kv1u1i28_nDrUEUrFQ6bAFcecbLyNLwdJ.png" alt="" /></div>', footer, { class: 'browser-detection-download-edge' })
+    const download = addBox(`<div style="display: inline-block;">
+      <a href="${btnHref}" target="_blank">${btnText}</a>
+      <img style="display: ${hideImg ? 'none' : 'block'}" src="https://static.uskid.com/web/garden/kv1u1i28_nDrUEUrFQ6bAFcecbLyNLwdJ.png" alt="" />
+    </div>`, footer, { class: 'browser-detection-download-edge' })
     const next = addBox('<a href="javascript:;">下次再说</a>', footer, { class: 'browser-detection-close' })
     
     addStyle(css)

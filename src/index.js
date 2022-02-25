@@ -11,7 +11,9 @@ class BrowserDetection {
     const info = this.info
     const dialog = this.dialog
     
-    if (info && info.name !== 'Chrome') {
+    if (info && info.name === 'IE') {
+      dialog.show('当前浏览器与教室不匹配')
+    } else if (info && info.name !== 'Chrome') {
       dialog.show('当前浏览器与教室不匹配，请更换<br />推荐使用微软官方的Edge浏览器。')
     } else if (Number(info && info.version) < 80) {
       dialog.show('当前浏览器与教室不匹配，请更换<br />推荐使用微软官方的Edge浏览器。')

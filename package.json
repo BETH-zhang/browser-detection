@@ -1,6 +1,6 @@
 {
   "name": "@zhike-private/browser-detection",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "使用用户代理进行浏览器版本检测",
   "main": "dist/index.js",
   "files": [
